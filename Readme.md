@@ -66,8 +66,13 @@ pip install pynput
 
 Run the script:
 
+windows:
 ```bash
 python keylogger.py
+```
+MAC/Linux:
+```bash
+python3 keylogger.py
 ```
 Once executed:
 
