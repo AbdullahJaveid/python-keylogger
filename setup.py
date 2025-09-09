@@ -5,7 +5,7 @@ setup(
     version='1.0.0',
     description='A simple Python keylogger using pynput',
     author='Abdullah Javeid',
-    author_email='your-email@example.com',
+    author_email='mabdullahjaved203@gmail.com',
     url='https://github.com/AbdullahJaveid/python-keylogger',
     py_modules=['keylogger'],
     install_requires=[
